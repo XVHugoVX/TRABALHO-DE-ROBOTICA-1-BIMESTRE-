@@ -1,0 +1,58 @@
+int LED_CarG = 13;
+int LED_CarY = 12;
+int LED_CarR = 8;
+int LED_PedG = 7;
+int LED_PedR = 4;
+int botao = 2;
+
+void setup()
+{
+  pinMode(LED_CarG, OUTPUT);
+  pinMode(LED_CarY, OUTPUT);
+  pinMode(LED_CarR, OUTPUT);
+  pinMode(LED_PedG, OUTPUT);
+  pinMode(LED_PedR, OUTPUT);
+  pinMode(botao, INPUT);
+}
+
+void loop()
+{
+  int Botao = digitalRead(botao);
+  
+    if(Botao == HIGH){
+      digitalWrite(LED_CarY, HIGH);
+      digitalWrite(LED_PedR, HIGH);
+      delay(2000);
+      digitalWrite(LED_CarY, LOW);
+      digitalWrite(LED_PedR, LOW);
+     
+
+      digitalWrite(LED_CarR, HIGH);
+      digitalWrite(LED_PedG, HIGH);
+      delay(8000);
+      digitalWrite(LED_CarR, LOW);
+      digitalWrite(LED_PedG, LOW);
+      
+    }else{
+  
+      digitalWrite(LED_CarG, HIGH);
+      digitalWrite(LED_PedR, HIGH);
+      delay(5000);
+      digitalWrite(LED_CarG, LOW);
+      
+
+      digitalWrite(LED_CarY, HIGH);
+      digitalWrite(LED_CarR, HIGH);
+      delay(2000);
+      digitalWrite(LED_CarY, LOW);
+      digitalWrite(LED_PedR, LOW);
+     
+
+      digitalWrite(LED_CarR, HIGH);
+      digitalWrite(LED_PedR, HIGH);
+      delay(6000);
+      digitalWrite(LED_CarR, LOW);
+      digitalWrite(LED_PedG, LOW);
+     
+  	}
+}
